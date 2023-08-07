@@ -1,5 +1,5 @@
 const express = require('express');
-// const cors = require('cors');
+const cors = require('cors');
 // const jwt = require("jsonwebtoken");
 // const user = require("./db/user");
 const { loginRouter, signupRouter } = require('./router/authRouter');
@@ -9,7 +9,7 @@ const categoryRouter = require('./router/categoryRouter');
 const app = express();
 
 
-// app.use(cors()); // Enable CORS for cross-origin requests
+app.use(cors()); // Enable CORS for cross-origin requests
 app.use(express.json()); // Parse incoming JSON data
 
 app.use("/auth/login", loginRouter);
