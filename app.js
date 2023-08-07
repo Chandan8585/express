@@ -2,9 +2,9 @@ const express = require('express');
 // const cors = require('cors');
 // const jwt = require("jsonwebtoken");
 // const user = require("./db/user");
-const { loginRouter, signupRouter } = require('../router/authRouter');
-const quizRouter = require('../router/quizRouter');
-const categoryRouter = require('../router/categoryRouter');
+const { loginRouter, signupRouter } = require('./router/authRouter');
+const quizRouter = require('./router/quizRouter');
+const categoryRouter = require('./router/categoryRouter');
 
 const app = express();
 
