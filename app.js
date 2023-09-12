@@ -19,6 +19,7 @@ const PORT = 8080;
 
 app.use("/category", categoryRouter);
 app.use("/quiz", quizRouter);
+
 app.listen(process.env.PORT || PORT, () => {
     console.log("server started....");
 })
