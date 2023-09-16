@@ -1,4 +1,4 @@
-const express = require('express');
+
 const jwt = require("jsonwebtoken");
 const { v4: uuid } = require('uuid'); // Import the uuid function from the uuid library
 const user = require('../db/user');
