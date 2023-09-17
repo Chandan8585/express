@@ -1,26 +1,29 @@
 const express = require('express');
 const cors = require('cors');
+
+const dotenv = require('dotenv');
+dotenv.config();
+
 const mongoose = require('mongoose');
 const { loginRouter, signupRouter } = require('./router/authRouter');
 const quizRouter = require('./router/quizRouter');
 const categoryRouter = require('./router/categoryRouter');
 const quizDataAddedToDBRouter = require('./router/dataimportRouter') 
+const authRouter = require('./router/authRouter');
 const connectDB = require('./config/dbconfig');
 const app = express();
 
 app.use(cors()); // Enable CORS for cross-origin requests
 app.use(express.json()); // Parse incoming JSON data
 
-// Connect to MongoDB using the connectDB function
+
 connectDB();
 
-// Define your routes
-app.use("/auth/login", loginRouter);
-app.use("/auth/signup", signupRouter);
+
 app.use("/category", categoryRouter);
 app.use("/quizData", quizDataAddedToDBRouter)
 app.use("/quiz", quizRouter);
-
+app.use("/auth", authRouter);
 const PORT = 8080;
 
 mongoose.connection.once("open", ()=>{
@@ -32,5 +35,4 @@ app.listen( process.env.PORT ||PORT, () => {
 
 
 
-// Start the server
 
