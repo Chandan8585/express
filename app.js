@@ -5,7 +5,6 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const mongoose = require('mongoose');
-const { loginRouter, signupRouter } = require('./router/authRouter');
 const quizRouter = require('./router/quizRouter');
 const categoryRouter = require('./router/categoryRouter');
 const quizDataAddedToDBRouter = require('./router/dataimportRouter') 

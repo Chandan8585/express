@@ -1,10 +1,11 @@
 const express = require("express");
 const quizRouter = express.Router();
 const quiz = require("../model/quiz.model");
-// const { authverify } = require("../authController/AuthController.js");
+const verifyUser = require("../middleWare/VerifyUser");
+
 
 quizRouter.route("/").get(
-    // authverify,
+    verifyUser,
      async(req, res) => {
     try {
         const quizzes = await quiz.find({});
