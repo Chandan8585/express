@@ -23,7 +23,7 @@ app.use("/category", categoryRouter);
 app.use("/quizData", quizDataAddedToDBRouter)
 app.use("/quiz", quizRouter);
 app.use("/auth", authRouter);
-const PORT = 8080;
+const PORT = 3000;
 
 mongoose.connection.once("open", ()=>{
 console.log("Connected to DB");
